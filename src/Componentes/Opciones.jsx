@@ -8,8 +8,10 @@ export function Opciones (n){
     }
 
     function resta (){
-        setCont(cont-1)
+        if (cont !== 0){
+            setCont(cont-1)
     }
+}
     return(
         <>
         <div className="opcion {n}">
@@ -22,4 +24,4 @@ export function Opciones (n){
         </div>
         </>
     )
-}
+    }

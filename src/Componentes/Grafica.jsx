@@ -22,7 +22,7 @@ function Init(l) {
     scene.background = new THREE.Color(0x505050)
 
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10);
-    camera.position.z = 5
+    camera.position.set(0,1,5)
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight)
@@ -86,9 +86,14 @@ function Init(l) {
 
 }
 function animate() {
-
+    renderer.render(scene, camera)
     renderer.setAnimationLoop(render);
 
+}
+animate ()
+
+return () => {
+    currentRef.removeChild(renderer.domElement)
 }
 
 function handleCollisions() {
